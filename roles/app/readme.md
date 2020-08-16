@@ -1,38 +1,31 @@
-Role Name
-=========
+# LAMP on Ubuntu 18.04
 
-A brief description of the role goes here.
+This role will install a LAMP environment (**L**inux, **A**pache, **M**ySQL and **P**HP) on an Ubuntu 18.04 machine, as explained in the guide on [How to Use Ansible to Install and Configure LAMP on Ubuntu 18.04](#). A virtualhost will be created with the options specified in the `vars/default.yml` variable file.
 
-Requirements
-------------
+## Settings
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+- `mysql_root_password`: the password for the MySQL root account.
+- `app_user`: a remote non-root user on the Ansible host that will own the application files.
+- `http_host`: your domain name.
+- `http_conf`: the name of the configuration file that will be created within Apache.
+- `http_port`: HTTP port, default is 80.
+- `disable_default`: whether or not to disable the default Apache website. When set to true, your new virtualhost should be used as default website. Default is true.
 
-Role Variables
---------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
 
-Dependencies
-------------
+### Customize Options
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+```shell
+nano vars/default.yml
+```
 
-Example Playbook
-----------------
+```yml
+---
+mysql_root_password: "mysql_root_password"
+app_user: "sammy"
+http_host: "your_domain"
+http_conf: "your_domain.conf"
+http_port: "80"
+disable_default: true
+```
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-    - hosts: servers
-      roles:
-         - { role: username.rolename, x: 42 }
-
-License
--------
-
-BSD
-
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
