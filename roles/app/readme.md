@@ -21,11 +21,10 @@ nano vars/default.yml
 
 ```yml
 ---
-mysql_root_password: "mysql_root_password"
-app_user: "sammy"
-http_host: "your_domain"
-http_conf: "your_domain.conf"
+mysql_root_password: "testadmin"
+app_user: "fill"
+http_host: "ans-node01"
+http_conf: "ans-node01.conf"
 http_port: "80"
 disable_default: true
 ```
-
