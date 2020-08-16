@@ -1,0 +1,5 @@
+- name: hola
+  hosts: localhost
+  tasks:
+   - debug: msg="Hola"
+   - shell: echo "Hola"

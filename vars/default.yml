@@ -1,0 +1,10 @@
+---
+create_user: fill
+copy_local_key: "{{ lookup('file', lookup('env','HOME') + '/.ssh/id_rsa.pub') }}"
+sys_packages: [ 'curl', 'vim', 'git', 'ufw']
+mysql_root_password: "testadmin"
+app_user: "fill"
+http_host: "ans-node"
+http_conf: "ans-node.conf"
+http_port: "80"
+disable_default: true

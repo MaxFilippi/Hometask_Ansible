@@ -1,0 +1,7 @@
+---
+mysql_root_password: "testadmin"
+app_user: "fill"
+http_host: "ans-node01"
+http_conf: "ans-node01.conf"
+http_port: "80"
+disable_default: true

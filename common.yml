@@ -1,0 +1,8 @@
+- name: ubuntu Basic Install for  ansible
+  hosts: all
+  remote_user: ansible
+  become: true
+ 
+  roles:
+  - common
+

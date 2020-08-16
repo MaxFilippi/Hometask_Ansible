@@ -1,0 +1,8 @@
+- name: LAMP install for  hosts
+  hosts: app 
+  remote_user: ansible
+  become: true
+ 
+  roles:
+  - app  
+
